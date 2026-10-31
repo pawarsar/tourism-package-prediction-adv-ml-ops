@@ -1,0 +1,32 @@
+{
+  "model__n_estimators": [
+    100,
+    200,
+    300
+  ],
+  "model__max_depth": [
+    10,
+    20,
+    30,
+    null
+  ],
+  "model__min_samples_split": [
+    2,
+    5,
+    10
+  ],
+  "model__min_samples_leaf": [
+    1,
+    2,
+    4
+  ],
+  "model__max_features": [
+    "sqrt",
+    "log2"
+  ],
+  "model__class_weight": [
+    null,
+    "balanced",
+    "balanced_subsample"
+  ]
+}
