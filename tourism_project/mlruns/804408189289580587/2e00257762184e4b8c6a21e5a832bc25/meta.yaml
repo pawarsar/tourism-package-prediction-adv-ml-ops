@@ -1,0 +1,14 @@
+artifact_uri: file:///content/drive/MyDrive/tourism_project/mlruns/804408189289580587/2e00257762184e4b8c6a21e5a832bc25/artifacts
+end_time: 1793469346147
+entry_point_name: ''
+experiment_id: '804408189289580587'
+lifecycle_stage: active
+run_id: 2e00257762184e4b8c6a21e5a832bc25
+run_name: RandomForest_Hyperparameter_Tuning
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793469269053
+status: 3
+tags: []
+user_id: root
