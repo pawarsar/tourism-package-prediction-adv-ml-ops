@@ -14,6 +14,10 @@ on:
 
 permissions:
   contents: write
+  
+concurrency:
+  group: tourism-mlops-pipeline
+  cancel-in-progress: false
 
 jobs:
 
@@ -63,10 +67,13 @@ jobs:
     needs: data-prep
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          ref: main
+          fetch-depth: 0
       - name: Install Dependencies
         run: pip install -r tourism_project/requirements.txt
       - name: Download Train Test Splits
@@ -88,4 +95,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add tourism_project/deployment/   # path to the saved model file
           git commit -m "Add trained model [skip ci]" || echo "No changes to commit"
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
