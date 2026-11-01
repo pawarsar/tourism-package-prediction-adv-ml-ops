@@ -7,6 +7,12 @@ import pandas as pd
 import streamlit as st
 
 
+st.set_page_config(
+    page_title="Tourism Package Prediction",
+    page_icon="✈️",
+    layout="centered"
+)
+
 # --------------------------------------------------
 # 1. LOAD MODEL AND METADATA
 # --------------------------------------------------
@@ -37,11 +43,6 @@ model, metadata = load_model()
 # 2. STREAMLIT APPLICATION
 # --------------------------------------------------
 
-st.set_page_config(
-    page_title="Tourism Package Prediction",
-    page_icon="✈️",
-    layout="centered"
-)
 
 st.title("Tourism Package Purchase Prediction")
 
