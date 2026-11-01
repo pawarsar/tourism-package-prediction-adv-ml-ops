@@ -71,13 +71,57 @@ st.subheader("Customer Information")
 
 for feature, details in feature_metadata.items():
 
-    if details["type"] == "numerical":
+    # CityTier: Integer dropdown (1, 2, 3)
+    if feature == "CityTier":
+
+        input_values[feature] = st.selectbox(
+            feature,
+            options=[1, 2, 3]
+        )
+
+    # Passport: Yes / No dropdown
+    elif feature == "Passport":
+
+        value = st.selectbox(
+            feature,
+            options=["Yes", "No"]
+        )
+
+        input_values[feature] = 1 if value == "Yes" else 0
+
+    # OwnCar: Yes / No dropdown
+    elif feature == "OwnCar":
+
+        value = st.selectbox(
+            feature,
+            options=["Yes", "No"]
+        )
+
+        input_values[feature] = 1 if value == "Yes" else 0
+
+    # PitchSatisfactionScore: Integer between 1 and 5
+    elif feature == "PitchSatisfactionScore":
 
         input_values[feature] = st.number_input(
             feature,
-            value=float(details["default"])
+            min_value=1,
+            max_value=5,
+            value=3,
+            step=1,
+            format="%d"
         )
 
+    # All other numerical features: Integer
+    elif details["type"] == "numerical":
+
+        input_values[feature] = st.number_input(
+            feature,
+            value=int(details["default"]),
+            step=1,
+            format="%d"
+        )
+
+    # Remaining categorical features: Dropdown
     else:
 
         options = details["options"]
