@@ -7,6 +7,7 @@ on:
     paths:
       - 'tourism_project/data/**'
       - 'tourism_project/model_building/**'
+      - 'tourism_project/deployment/**'
       - 'tourism_project/requirements.txt'
       - '.github/workflows/pipeline.yml'
   workflow_dispatch:
