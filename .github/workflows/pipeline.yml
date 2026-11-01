@@ -46,9 +46,10 @@ jobs:
       - name: Install Dependencies
         run: pip install -r tourism_project/requirements.txt
       - name: Run Data Preparation
-        run: python tourism_project/model_building/prep.py \
-            --data tourism_project/data/tourism.csv \
-            --output-dir tourism_project/data/split
+        run: |
+          python tourism_project/model_building/prep.py \
+              --data tourism_project/data/tourism.csv \
+              --output-dir tourism_project/data/splits
       - name: Upload Train Test Splits
         uses: actions/upload-artifact@v4
         with:
