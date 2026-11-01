@@ -3,8 +3,13 @@ name: Tourism Project Pipeline
 on:
   push:
     branches:
-      - main  
-  workflow_dispatch: 
+      - main
+    paths:
+      - 'tourism_project/data/**'
+      - 'tourism_project/model_building/**'
+      - 'tourism_project/requirements.txt'
+      - '.github/workflows/pipeline.yml'
+  workflow_dispatch:
 
 permissions:
   contents: write
